@@ -4,14 +4,13 @@ var generateBtn = document.querySelector("#generate");
 //Creating password object.
 var pwdCriteria = {
 
-  //Property for length of password
   pwdLength: 0,
 
-  //array to hold lowercase letters
+  //lowercase letters
   pwdLowerCase: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
     "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
 
-  //array to hold uppercase letters
+  //uppercase letters
   pwdUpperCase: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
     "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
 
@@ -25,17 +24,14 @@ var pwdCriteria = {
 
 // Write password to the #password input on index.html
 function writePassword() {
-  //call generatePassword function
   var password = generatePassword();
   
   //set passwordText = to the textArea on index.html witht he ID of password
   var passwordText = document.querySelector("#password");
-
-  //update the textArea with the new password
   passwordText.value = password;
 }
 
-// Add event listener to generate button
+// Event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
 //function to generate a new password
@@ -67,7 +63,7 @@ function generatePassword() {
         return "Your secure password";
       }
       else {
-        //check password to be the right length length criteria
+        //check password to be the right length 
         if (passwordLength < 8 || passwordLength > 128) {
           alert("Password must be between 8 and 128 characters.");
           return "Your secure password";
@@ -89,8 +85,7 @@ function generatePassword() {
                 result = result + lc;
                 pwdCriteria.pwdLength++;
               }
-
-                          
+           
               if (specialChar === true && pwdCriteria.pwdLength < passwordLength) {
                 var sc = pwdCriteria.pwdCharacter[Math.floor(Math.random()* 2)]
                 result = result + sc;
@@ -118,8 +113,8 @@ function generatePassword() {
 
     //return the password back to the calling function
     return result;
-
-  
+    
+    //function to prompt questions for password
     function showPrompts() {
       lowerCase = confirm("Do you want lower case letters in your password?");
       upperCase = confirm("Do you want upper case letters in your password?");
