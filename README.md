@@ -22,6 +22,9 @@ git clone git@github.com:marissa424/Password-Generator.git
 ```
 after you have cloned the repository onto your local computer open your code in VS Code or any other coding editor and right click to open your html file in the web broswer and you will be able to run the application and generate your password. 
 
+## Deployed Application
+(https://marissa424.github.io/Password-Generator/)
+
 ## Usage
    
 ![Password Generator](./images/password_generator.jpg)
